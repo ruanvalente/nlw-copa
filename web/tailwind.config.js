@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         sans: "Roboto, sans-serif;",
       },
+      backgroundImage: {
+        "nlw-copa": "url(/background-effects.png)",
+      },
       colors: {
         ignite: {
           500: "#129E57",
