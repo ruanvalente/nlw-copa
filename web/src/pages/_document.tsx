@@ -15,7 +15,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="bg-gray-900 bg-nlw-copa">
+      <body className="bg-gray-900 bg-nlw-copa bg-no-repeat bg-cover">
         <Main />
         <NextScript />
       </body>
