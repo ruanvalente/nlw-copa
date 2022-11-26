@@ -8,7 +8,7 @@ import { Button } from "../components/Button";
 import { Header } from "../components/Header";
 import { PoolCard } from "../components/PoolCard";
 
-export default function Pools() {
+export function Pools() {
   return (
     <VStack flex={1} bgColor="gray.900">
       <Header title="Meus bolões" />
