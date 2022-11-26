@@ -1,4 +1,4 @@
-import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
+import { FastifyInstance, FastifyRequest } from "fastify";
 import { z } from "zod";
 
 import { prisma } from "../../lib/prisma";
@@ -8,7 +8,7 @@ export async function gamesRoutes(fastify: FastifyInstance) {
   fastify.get(
     "/pools/:id/games",
     { onRequest: [authenticated] },
-    async (request: FastifyRequest, reply: FastifyReply) => {
+    async (request: FastifyRequest) => {
       const getPoolParams = z.object({
         id: z.string(),
       });
