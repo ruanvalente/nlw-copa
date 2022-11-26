@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import { Icon, VStack } from "native-base";
 
@@ -9,6 +10,7 @@ import { Header } from "../components/Header";
 import { PoolCard } from "../components/PoolCard";
 
 export function Pools() {
+  const { navigate } = useNavigation();
   return (
     <VStack flex={1} bgColor="gray.900">
       <Header title="Meus bolões" />
@@ -24,6 +26,7 @@ export function Pools() {
         <Button
           title="Buscar bolão por código"
           leftIcon={<Icon as={Octicons} name="search" color="black" />}
+          onPress={() => navigate("find")}
         />
       </VStack>
     </VStack>
