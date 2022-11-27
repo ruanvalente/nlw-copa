@@ -1,9 +1,11 @@
-import { Row, Text, Pressable } from "native-base";
+import { Row, Text, Pressable, VStack } from "native-base";
+import { useNavigation } from "@react-navigation/native";
 
 export function EmptyPoolList() {
+  const { navigate } = useNavigation();
   return (
-    <Row flexWrap="wrap" justifyContent="center">
-      <Text color="white" fontSize="sm" textAlign="center">
+    <VStack flex={1} textAlign="center">
+      {/* <Text color="white" fontSize="sm" textAlign="center">
         Você ainda não está participando de {"\n"} nenhum bolão, que tal
       </Text>
 
@@ -29,7 +31,34 @@ export function EmptyPoolList() {
 
       <Text color="white" fontSize="sm" textAlign="center">
         ?
+      </Text> */}
+      <Text color="white" fontSize="sm" textAlign="center">
+        Você ainda não está participando de {"\n"}
+        nenhum bolão, que tal {"\n"}
       </Text>
-    </Row>
+      <Row justifyContent="center" mt={-5}>
+        <Pressable onPress={() => navigate("find")}>
+          <Text
+            textDecorationLine="underline"
+            color="yellow.500"
+            textDecoration="underline"
+            textAlign="center"
+          >
+            buscar um por código
+          </Text>
+        </Pressable>
+        <Text color="white" fontSize="sm" textAlign="center" mx={1}>
+          ou
+        </Text>
+        <Pressable onPress={() => navigate("new")}>
+          <Text textDecorationLine="underline" color="yellow.500">
+            criar um novo
+          </Text>
+        </Pressable>
+        <Text color="white" fontSize="sm" textAlign="center">
+          ?
+        </Text>
+      </Row>
+    </VStack>
   );
 }
